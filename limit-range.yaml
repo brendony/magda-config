@@ -1,0 +1,54 @@
+kind: LimitRange
+apiVersion: v1
+metadata:
+  name: kommander
+  namespace: scientific-metadata-crawling
+  selfLink: /api/v1/namespaces/scientific-metadata-crawling/limitranges/kommander
+  uid: c11c42bd-9a03-4846-8d4d-a0af455cef91
+  resourceVersion: '179965552'
+  creationTimestamp: '2021-02-25T07:58:52Z'
+  labels:
+    kubefed.io/managed: 'true'
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: >
+      {"apiVersion":"v1","kind":"LimitRange","metadata":{"annotations":{},"creationTimestamp":"2021-02-25T07:58:52Z","labels":{"kubefed.io/managed":"true"},"managedFields":[{"apiVersion":"v1","fieldsType":"FieldsV1","fieldsV1":{"f:metadata":{"f:annotations":{"f:kubectl.kubernetes.io/last-applied-configuration":{}}}},"manager":"kubectl","operation":"Update","time":"2021-03-28T21:01:09Z"},{"apiVersion":"v1","fieldsType":"FieldsV1","fieldsV1":{"f:metadata":{"f:labels":{".":{},"f:kubefed.io/managed":{}}},"f:spec":{"f:limits":{}}},"manager":"controller-manager","operation":"Update","time":"2021-03-28T21:01:19Z"}],"name":"kommander","namespace":"scientific-metadata-crawling","selfLink":"/api/v1/namespaces/scientific-metadata-crawling/limitranges/kommander","uid":"c11c42bd-9a03-4846-8d4d-a0af455cef91"},"spec":{"limits":[{"default":{"cpu":"300m","memory":"128Mi"},"defaultRequest":{"cpu":"100m","memory":"128Mi"},"max":{"cpu":"2","memory":"12Gi"},"type":"Container"},{"max":{"cpu":"5","memory":"12Gi"},"type":"Pod"}]}}
+  managedFields:
+    - manager: kubectl
+      operation: Update
+      apiVersion: v1
+      time: '2021-03-28T22:06:38Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:metadata':
+          'f:annotations':
+            'f:kubectl.kubernetes.io/last-applied-configuration': {}
+    - manager: controller-manager
+      operation: Update
+      apiVersion: v1
+      time: '2021-03-28T22:06:48Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:metadata':
+          'f:labels':
+            .: {}
+            'f:kubefed.io/managed': {}
+        'f:spec':
+          'f:limits': {}
+spec:
+  limits:
+    - type: Container
+      max:
+        cpu: '2'
+        memory: 12Gi
+      min:
+        cpu: 100m
+      default:
+        cpu: 300m
+        memory: 128Mi
+      defaultRequest:
+        cpu: 100m
+        memory: 128Mi
+    - type: Pod
+      max:
+        cpu: '5'
+        memory: 12Gi
