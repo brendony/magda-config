@@ -1,0 +1,100 @@
+image: {}
+  #repository: data61/
+  #tag: latest
+  #pullPolicy: Always#
+autoscaler:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 3
+  targetCPUUtilizationPercentage: 80
+resources:
+  requests:
+    cpu: 10m
+    memory: 30Mi
+  limits:
+    cpu: 100m
+disableAuthenticationFeatures: false
+showNotificationBanner: false
+service: {}
+useLocalStyleSheet: false
+contentApiBaseUrlInternal: "http://content-api/v0/"
+featureFlags:
+  # featureFlags.cataloguing -- turn on / off metadata creation tool. 
+  # If this option is `false`, user won't be able to access the dataset add / edit UI 
+  cataloguing: false
+  # featureFlags.previewAddDataset -- turn on / off the preview mode of metadata creation tool.
+  # Under preview mode, user can play with the metadata creation tool without requiring admin permission.
+  # No data will be saved under this mode.
+  previewAddDataset: false
+  # featureFlags.publishToDga -- turn on / off the UI switch that allow user to select whether to auto push dataset data to a CKAN instance
+  publishToDga: false
+  # featureFlags.placeholderWorkflowsOn -- turn on / off some metadata creation tool questions that are still under development
+  placeholderWorkflowsOn: false
+  # featureFlags.datasetApprovalWorkflowOn -- turn on / off dataset approval note step
+  datasetApprovalWorkflowOn: true
+  # featureFlags.useStorageApi -- turn on / off the UI option to use Magda internal storage for file storage.
+  useStorageApi: true
+
+
+# The base url where the UI serves at. If not specify (or empty string), it assumes the UI serves at '/'.
+# it should have a leading slash, but no trailing slash
+# uiBaseUrl: "/"
+
+vocabularyApiEndpoints: []
+defaultContactEmail: "mail@example.com"
+custodianOrgLevel: 2
+# default max preview file size 2mib
+automaticPreviewMaxFileSize: 2097152
+mandatoryFields:
+  - dataset.title
+  - dataset.description
+  - dataset.defaultLicense
+  - distributions.title
+  - distributions.format
+  - distributions.license
+  - dataset.publisher
+  - licenseLevel
+  - dataset.defaultLicense
+  - informationSecurity.classification
+  - informationSecurity.disseminationLimits
+  - publishToDga
+dateConfig:
+  dateFormats:
+    - YYYY
+    - YYYY-MM
+    - DD-MM-YYYY
+    - MM-DD-YYYY
+    - YYYY-MM-DD
+    - YYYY-MM-DDThh:mmTZD
+    - YYYY-MM-DDThh:mm:ssTZD
+    - YYYY-MM-DDThh:mm:ss.sTZD
+    - DD-MMM-YYYY
+    - MMM-DD-YYYY
+  dateRegexes:
+      dateRegex: "(date|dt|year|decade)"
+      startDateRegex: "(start|st).*(date|dt|year|decade)"
+      endDateRegex: "(end).*(date|dt|year|decade)"
+datasetThemes: []
+noManualThemes: false
+noManualKeywords: false
+keywordsBlackList:
+  - Mr
+  - Ms
+  - Mrs
+  - Miss
+  - Dr
+  - Hon
+  - Jr
+  - Prof
+  - Sr
+  - St
+  - Mr.
+  - Ms.
+  - Mrs.
+  - Miss.
+  - Dr.
+  - Hon.
+  - Jr.
+  - Prof.
+  - Sr.
+  - St.

@@ -1,0 +1,13 @@
+image: {}
+elasticsearch:
+  shards: 1
+  replicas: 0
+  useGcsSnapshots: false
+resources:
+  requests:
+    cpu: 100m
+    memory: 250Mi
+  limits:
+    cpu: 250m
+makeSnapshots: false
+readSnapshots: false

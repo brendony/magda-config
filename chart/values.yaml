@@ -17,7 +17,7 @@ global:
   ## The external URL of the installation, e.g. "https://search.data.gov.au".
   ## This is used in a number of places, including linking back to the site
   ## from emails, creating a absolute sitemap URL for robots.txt, etc.
-  externalUrl: https://example.com
+  externalUrl: https://kommander.preprod.mde.csiro.au/data_catalog
   
   ## How to handle rolling updates during a deployment. If set to 0, kubernetes
   ## will happily take down pods while it replaces them (useful for dev setups).
@@ -113,7 +113,7 @@ global:
   ## workloads in Magda
   openfaas:
     ## Turn on / off openfaas
-    enabled: true
+    enabled: false
     ## Only allow someone who's logged into magda as an admin to access the openfaas gateway
     allowAdminOnly: true
 
@@ -455,7 +455,7 @@ magda:
         ## Client id for google
         # googleClientId: ""
         ## If you want to use ckan as a way to login, put the base URL here
-        ckanAuthenticationUrl: https://data.gov.au/data
+#        ckanAuthenticationUrl: https://data.gov.au/data
         ## If you want to use the Australian Department of Industry's VANguard service, put the details here:
         # vanguardWsFedIdpUrl: https://authentication.business.gov.au/fas/v2/wsfed12/authenticate
         # vanguardWsFedRealm: your-realm-here
@@ -505,7 +505,7 @@ magda:
     preview-map:
       image:
         repository: docker.io/data61
-        tag: 0.0.57-0
+        tag: v0.0.60-alpha.1
         pullPolicy: IfNotPresent
         imagePullSecret: false
 

@@ -1,0 +1,164 @@
+apiVersion: v2
+dependencies:
+- name: apidocs-server
+  repository: file://../internal-charts/apidocs-server
+  tags:
+  - all
+  - apidocs-server
+  version: 0.0.60-alpha.1
+- name: authorization-api
+  repository: file://../internal-charts/authorization-api
+  tags:
+  - all
+  - authorization-api
+  version: 0.0.60-alpha.1
+- name: authorization-db
+  repository: file://../internal-charts/authorization-db
+  tags:
+  - all
+  - authorization-db
+  version: 0.0.60-alpha.1
+- name: cloud-sql-proxy
+  repository: file://../internal-charts/cloud-sql-proxy
+  tags:
+  - all
+  - cloud-sql-proxy
+  version: 0.0.60-alpha.1
+- name: combined-db
+  repository: file://../internal-charts/combined-db
+  tags:
+  - all
+  - combined-db
+  version: 0.0.60-alpha.1
+- name: content-api
+  repository: file://../internal-charts/content-api
+  tags:
+  - all
+  - content-api
+  version: 0.0.60-alpha.1
+- name: content-db
+  repository: file://../internal-charts/content-db
+  tags:
+  - all
+  - content-db
+  version: 0.0.60-alpha.1
+- name: correspondence-api
+  repository: file://../internal-charts/correspondence-api
+  tags:
+  - all
+  - correspondence-api
+  version: 0.0.60-alpha.1
+- name: elasticsearch
+  repository: file://../internal-charts/elasticsearch
+  tags:
+  - all
+  - elasticsearch
+  version: 0.0.60-alpha.1
+- name: gateway
+  repository: file://../internal-charts/gateway
+  tags:
+  - all
+  - gateway
+  version: 0.0.60-alpha.1
+- name: indexer
+  repository: file://../internal-charts/indexer
+  tags:
+  - all
+  - indexer
+  version: 0.0.60-alpha.1
+- alias: preview-map
+  name: magda-preview-map
+  repository: https://charts.magda.io
+  tags:
+  - all
+  - preview-map
+  version: 0.0.58
+- name: registry-api
+  repository: file://../internal-charts/registry-api
+  tags:
+  - all
+  - registry-api
+  version: 0.0.60-alpha.1
+- name: registry-db
+  repository: file://../internal-charts/registry-db
+  tags:
+  - all
+  - registry-db
+  version: 0.0.60-alpha.1
+- name: search-api
+  repository: file://../internal-charts/search-api
+  tags:
+  - all
+  - search-api
+  version: 0.0.60-alpha.1
+- name: search-api-node
+  repository: file://../internal-charts/search-api-node
+  tags:
+  - search-api-node
+  version: 0.0.60-alpha.1
+- name: session-db
+  repository: file://../internal-charts/session-db
+  tags:
+  - all
+  - session-db
+  version: 0.0.60-alpha.1
+- name: web-server
+  repository: file://../internal-charts/web-server
+  tags:
+  - all
+  - web-server
+  version: 0.0.60-alpha.1
+- name: admin-api
+  repository: file://../internal-charts/admin-api
+  tags:
+  - all
+  - admin-api
+  version: 0.0.60-alpha.1
+- name: opa
+  repository: file://../internal-charts/opa
+  tags:
+  - all
+  - opa
+  version: 0.0.60-alpha.1
+- name: storage-api
+  repository: file://../internal-charts/storage-api
+  tags:
+  - all
+  - storage-api
+  version: 0.0.60-alpha.1
+- condition: global.enableMultiTenants
+  name: tenant-api
+  repository: file://../internal-charts/tenant-api
+  tags:
+  - all
+  - tenant-api
+  version: 0.0.60-alpha.1
+- condition: global.enableMultiTenants
+  name: tenant-db
+  repository: file://../internal-charts/tenant-db
+  tags:
+  - all
+  - tenant-db
+  version: 0.0.60-alpha.1
+- condition: global.openfaas.enabled
+  name: openfaas
+  repository: file://../openfaas
+  version: 5.5.5-magda
+- name: priorities
+  repository: file://../internal-charts/priorities
+  tags:
+  - priorities
+  version: 0.0.60-alpha.1
+- name: ingress
+  repository: file://../internal-charts/ingress
+  tags:
+  - ingress
+  version: 0.0.60-alpha.1
+description: A complete solution for managing, publishing and discovering government
+  data, private and open. This chart includes all core magda modules.
+home: https://github.com/magda-io/magda
+kubeVersion: '>= 1.14.0-0'
+name: magda-core
+sources:
+- https://github.com/magda-io/magda
+version: 0.0.60-alpha.1
