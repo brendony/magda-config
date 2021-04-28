@@ -11,7 +11,7 @@ client:
     limits:
       cpu: 100m
 data:
-  storage: 50Gi
+  storage: 10Gi
   pluginsInstall: ""
   heapSize: "256m"
   resources:
@@ -20,6 +20,7 @@ data:
       memory: 500Mi
     limits:
       cpu: 500m
+      memory: 750Mi
 master:
   pluginsInstall: ""
   resources:

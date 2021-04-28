@@ -13,6 +13,7 @@ resources:
     memory: 500Mi
   limits:
     cpu: 750m
+    memory: 3Gi
 deployments:
   # -- deployment config for full registry instance.
   # You can also specify different `resources` config under this key.

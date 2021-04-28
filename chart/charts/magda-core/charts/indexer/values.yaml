@@ -5,9 +5,10 @@ elasticsearch:
   useGcsSnapshots: false
 resources:
   requests:
-    cpu: 100m
+    cpu: 1000m
     memory: 250Mi
   limits:
-    cpu: 250m
+    cpu: 2000m
+    memory: 4Gi
 makeSnapshots: false
 readSnapshots: false
